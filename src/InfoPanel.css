@@ -1,0 +1,35 @@
+.title {
+    text-align: left;
+    font-family: arial, sans-serif;
+  }
+  
+  .info {
+    text-align: left;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    border: 3px solid #ddd;
+    width: 100%;
+
+  }
+  
+  .info td, .info th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    
+  }
+  
+
+  
+  .info tr:hover {background-color: #ddd;}
+  
+  .info th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #2A99C0;
+    color: white;
+  }
+
+  .info tbody {
+    padding: 12px;
+  }
