@@ -28,7 +28,7 @@ function App() {
     };
 
     const onNodeMouseOver = (nodeId) => {
-      setTableRowIdHighlighted(nodeId)
+      setTableRowIdHighlighted(String(nodeId))
     }
 
     const student = students.nodes.find(element => String(element.id) === tableRowIdHighlighted)
@@ -59,6 +59,8 @@ function App() {
             <InfoPanel student={student} />
             <Table
                 data={students.nodes}
+                onNodeMouseOver={onNodeMouseOver}
+                onNodeMouseOut={onNodeMouseOut}
                 tableRowIdHighlighted={tableRowIdHighlighted}
             />
         </div>

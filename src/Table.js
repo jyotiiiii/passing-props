@@ -1,6 +1,6 @@
 import './Table.css';
 
-const Table = ({ data, tableRowIdHighlighted }) => {
+const Table = ({ data, tableRowIdHighlighted, onNodeMouseOver, onNodeMouseOut }) => {
     const header = Object.keys(data[0]);
 
     return (
@@ -17,8 +17,14 @@ const Table = ({ data, tableRowIdHighlighted }) => {
                         // Work out which row is activated based on the id
                         const isThisStudentHighlighted = String(student.id) === tableRowIdHighlighted;
 
+                        const onMouseOver = () => {
+                            onNodeMouseOver(student.id)
+                        }
+
                         return (
-                            <tr id={isThisStudentHighlighted ? "highlighted" : ""} key={student.id}>
+                            <tr id={isThisStudentHighlighted ? "highlighted" : ""} key={student.id}
+                                onMouseOver={onMouseOver} onMouseOut={onNodeMouseOut}
+                            >
                                 <td>{student.id}</td>
                                 <td>{student.name}</td>
                                 <td>{student.age}</td>
